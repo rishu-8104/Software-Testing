@@ -4,6 +4,12 @@
  * @since       17.0 (miminimum Java version)
  */
 class HelloWorld{
+/**
+     * Exercise: 1.1
+     * Write the Hello World program.
+     *
+     * @param  args  Command line arguments. Not used.
+     */
 	public static void hello() {
         System.out.println("Hello World");
     }
