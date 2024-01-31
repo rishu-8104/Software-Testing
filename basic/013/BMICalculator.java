@@ -31,3 +31,5 @@ public class BMICalculator {
         System.out.printf("BMI       : %.2f\n", bmi);
     }
 }
+
+// End of file
