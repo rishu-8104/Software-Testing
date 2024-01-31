@@ -10,10 +10,19 @@ class HelloWorld{
      *
      * @param  args  Command line arguments. Not used.
      */
-	public static void hello() {
-        System.out.println("Hello World");
+	public static void main(String[] args) {
+        String formattedBox = getFormattedNameBox("Rishu Kumar");
+        System.out.println(formattedBox);
     }
 
-	public static void main (String[] args){
-		hello();
-}}
+    public static String getFormattedNameBox(String name) {
+        int length = name.length() + 16; // Considering padding and asterisks
+
+        String border = "*".repeat(length);
+
+        return String.format("%s\n* Hello, I am %s *\n%s\n", border, name, border);
+    }
+
+}
+
+// End of file
