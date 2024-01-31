@@ -12,13 +12,13 @@ public class ConeCalculator {
      */
     public static void main(String[] args) {
         ConeCalculator calculator = new ConeCalculator();
-        calculator.calculateAndDisplayConeVolume(3, 4);
+        String result = calculator.calculateAndDisplayConeVolume(3, 4);
+        System.out.println(result);
     }
 
-    public void calculateAndDisplayConeVolume(double radius, double height) {
+    public String calculateAndDisplayConeVolume(double radius, double height) {
         double volume = calculateConeVolume(radius, height);
-        String result = displayResults(radius, height, volume);
-        System.out.println(result);
+        return displayResults(radius, height, volume);
     }
 
     public double calculateConeVolume(double radius, double height) {
