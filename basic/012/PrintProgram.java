@@ -1,8 +1,18 @@
+/**
+ * @author      Rishu Kumar <Rishu.kumar@tuni.fi>
+ * @version     2024.0131 (last modified)
+ * @since       17.0 (miminimum Java version)
+ */
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PrintProgram {
-
+     /**
+     * Exercise: 1.2
+     * Write the Print program.
+     *
+     * @param  args  Command line arguments. Not used.
+     */
     public static void main(String[] args) {
 
         PrintProgram printer = new PrintProgram();
