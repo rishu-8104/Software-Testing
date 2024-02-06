@@ -3,7 +3,7 @@
  * It provides a method to determine if there is an event at the specified time.
  *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
- * @version 2024.0206 (last modified)
+ * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
  */
 public class EventCalendar {

@@ -3,7 +3,7 @@
  * The size of the arrow is determined by the specified size and character.
  *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
- * @version 2024.0206 (last modified)
+ * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
  */
 public class ShapeArrow {
