@@ -3,33 +3,60 @@
  * The size of the arrow is determined by the specified size and character.
  *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
- * @version 2024.0206 (last modified: 2024.0206)
+ * @version 2024.0206 (last modified)
  * @since 17.0 (minimum Java version)
  */
 public class ShapeArrow {
+    private int size; // The size of the arrow
+    private char character; // The character used to represent the arrow
+
     /**
-     * Exercise: 3.5
-     * Write a program to display a shape resembling an arrow.
+     * Constructs a ShapeArrow object with the given size and character.
+     *
+     * @param size      The size of the arrow.
+     * @param character The character used to represent the arrow.
+     */
+    public ShapeArrow(int size, char character) {
+        this.size = size;
+        this.character = character;
+    }
+
+    /**
+     * Generates and returns the arrow shape as a string.
+     *
+     * @return The arrow shape as a string.
+     */
+    public String generateArrow() {
+        StringBuilder arrow = new StringBuilder();
+
+        // Generate the arrow shape
+        for (int i = 0; i < size; i++) {
+            // Append leading spaces for indentation
+            for (int j = 0; j < (i < size - 2 ? i : size - 1 - i); j++) {
+                arrow.append("    "); // Four spaces for indentation
+            }
+
+            // Append the character pattern for the current row
+            for (int j = 0; j < size; j++) {
+                arrow.append(character).append(" "); // Append character followed by a space
+            }
+
+            arrow.append("\n"); // Move to the next line after each row
+        }
+
+        return arrow.toString();
+    }
+
+    /**
+     * Main method to run the program.
      *
      * @param args Command line arguments. Not used.
      */
     public static void main(String[] args) {
         int size = 5; // Change this value to set the size of the arrow
         char character = '*'; // Change this character to adjust the displayed character
-
-        // Print the arrow shape
-        for (int i = 0; i < size; i++) {
-            // Print leading spaces for indentation
-            for (int j = 0; j < (i < size - 2 ? i : size - 1 - i); j++) {
-                System.out.print("    "); // Four spaces for indentation
-            }
-
-            // Print the character pattern for the current row
-            for (int j = 0; j < size; j++) {
-                System.out.print(character + " "); // Print character followed by a space
-            }
-
-            System.out.println(); // Move to the next line after each row
-        }
+        ShapeArrow shapeArrow = new ShapeArrow(size, character);
+        String arrow = shapeArrow.generateArrow();
+        System.out.println(arrow);
     }
 }

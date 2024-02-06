@@ -1,28 +1,44 @@
 /**
  * The UnderlineDrawer class draws an underline below a given string.
+ * It provides a method to draw the underline.
  *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
- * @version 2024.0206 (last modified: 2024.0206)
+ * @version 2024.0206 (last modified)
  * @since 17.0 (minimum Java version)
  */
 public class UnderlineDrawer {
+
     /**
-     * Exercise: 3.3
-     * Write a program to draw an underline below a string.
+     * Draws an underline below the given string and returns it.
+     *
+     * @param str The string for which the underline is drawn.
+     * @return The underline string.
+     */
+    public String drawUnderline(String str) {
+        StringBuilder underline = new StringBuilder();
+        int length = str.length();
+
+        // Append the original string to the result
+        underline.append(str).append("\n");
+
+        // Append the underline
+        for (int i = 0; i < length; i++) {
+            underline.append("-");
+        }
+        underline.append("\n"); // Move to the next line
+
+        return underline.toString();
+    }
+
+    /**
+     * Main method to run the program.
      *
      * @param args Command line arguments. Not used.
      */
     public static void main(String[] args) {
+        UnderlineDrawer underlineDrawer = new UnderlineDrawer();
         String str = "This is a test"; // Change this string to draw underline below it
-        int length = str.length();
-
-        // Print the original string
-        System.out.println(str);
-
-        // Print the underline
-        for (int i = 0; i < length; i++) {
-            System.out.print("-");
-        }
-        System.out.println(); // Move to the next line
+        String underline = underlineDrawer.drawUnderline(str);
+        System.out.println(underline);
     }
 }

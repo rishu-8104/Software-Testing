@@ -3,33 +3,57 @@
  * The size of the table determines the number of rows and columns in the table.
  *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
- * @version 2024.0206 (last modified: 2024.0206)
+ * @version 2024.0206 (last modified)
  * @since 17.0 (minimum Java version)
  */
 public class MultiplicationTable {
+    private int size; // The size of the multiplication table
+
     /**
-     * Exercise: 3.6
-     * Write a program to display a multiplication table of a specified size with evenly spaced output.
+     * Constructs a MultiplicationTable object with the given size.
+     *
+     * @param size The size of the multiplication table.
+     */
+    public MultiplicationTable(int size) {
+        this.size = size;
+    }
+
+    /**
+     * Generates and returns the multiplication table as a string.
+     *
+     * @return The multiplication table as a string.
+     */
+    public String generateTable() {
+        StringBuilder table = new StringBuilder();
+
+        // Generate header row
+        table.append("    |");
+        for (int i = 1; i <= size; i++) {
+            table.append(String.format("%4d", i));
+        }
+        table.append("\n-----------------------------------------\n");
+
+        // Generate table rows
+        for (int i = 1; i <= size; i++) {
+            table.append(String.format("%3d |", i));
+            for (int j = 1; j <= size; j++) {
+                table.append(String.format("%4d", i * j));
+            }
+            table.append("\n");
+        }
+
+        return table.toString();
+    }
+
+    /**
+     * Main method to run the program.
      *
      * @param args Command line arguments. Not used.
      */
     public static void main(String[] args) {
         int size = 9; // Change this value to set the size of the multiplication table
-
-        // Print header row
-        System.out.print("    |");
-        for (int i = 1; i <= size; i++) {
-            System.out.printf("%4d", i);
-        }
-        System.out.println("\n-----------------------------------------");
-
-        // Print table rows
-        for (int i = 1; i <= size; i++) {
-            System.out.printf("%3d |", i);
-            for (int j = 1; j <= size; j++) {
-                System.out.printf("%4d", i * j);
-            }
-            System.out.println();
-        }
+        MultiplicationTable multiplicationTable = new MultiplicationTable(size);
+        String table = multiplicationTable.generateTable();
+        System.out.println(table);
     }
 }
