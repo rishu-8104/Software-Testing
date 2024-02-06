@@ -18,7 +18,8 @@ public class ValueOrderDecider {
         int b = 4;
         int c = 7;
 
-        String result = decideOrder(a, b, c);
+        ValueOrderDecider orderDecider = new ValueOrderDecider();
+        String result = orderDecider.decideOrder(a, b, c);
         System.out.println(result);
     }
 
@@ -30,7 +31,7 @@ public class ValueOrderDecider {
      * @param c The third integer value.
      * @return A string indicating the order of the values.
      */
-    public static String decideOrder(int a, int b, int c) {
+    public String decideOrder(int a, int b, int c) {
         int biggest = Math.max(a, Math.max(b, c));
         int smallest = Math.min(a, Math.min(b, c));
         int middle = a + b + c - biggest - smallest;
