@@ -3,15 +3,21 @@
  * @version     2024.0126 (last modified)
  * @since       17.0 (minimum Java version)
  */
-class HelloWorld {
+public class HelloWorld {
+
+    public static void main(String[] args) {
+        HelloWorld helloWorld = new HelloWorld(); // Instantiating the HelloWorld object
+        helloWorld.printFormattedNameBox("Rishu Kumar");
+    }
+
     /**
      * Exercise: 1.1
      * Write the Hello World program.
      *
-     * @param args Command line arguments. Not used.
+     * @param name The name to be included in the box.
      */
-    public static void main(String[] args) {
-        String formattedBox = getFormattedNameBox("Rishu Kumar");
+    public void printFormattedNameBox(String name) {
+        String formattedBox = getFormattedNameBox(name);
         System.out.println(formattedBox);
     }
 
@@ -21,7 +27,7 @@ class HelloWorld {
      * @param name The name to be included in the box.
      * @return A string representing the formatted name box.
      */
-    public static String getFormattedNameBox(String name) {
+    private String getFormattedNameBox(String name) {
         int length = name.length() + 16; // Considering padding and asterisks
 
         String border = "*".repeat(length);
@@ -29,4 +35,3 @@ class HelloWorld {
         return String.format("%s\n* Hello, I am %s *\n%s\n", border, name, border);
     }
 }
-
