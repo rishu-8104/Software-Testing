@@ -43,6 +43,7 @@ public class InchToCentimeterConverter {
      * Main method to run the program.
      *
      * @param args Command line arguments. Not used.
+     * @return
      */
     public static void main(String[] args) {
         double[] inches = {1, 2, 3};
