@@ -7,9 +7,11 @@
  * @since 17.0 (minimum Java version)
  */
 public class Pythagoras {
+
     /**
-     * Exercise: 1.4
-     * Write the Pythagoras program.
+     * Exercise: 1.4 Write the Pythagoras program.
+     *
+     * Calculates the length of the hypotenuse of a right triangle given the lengths of the other two sides.
      *
      * @param a The length of one side of the right triangle.
      * @param b The length of the other side of the right triangle.

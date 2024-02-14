@@ -29,7 +29,7 @@ public class PrintProgram {
     }
 
     /**
-     * Display the provided information.
+     * Displays the provided information.
      *
      * @param currentDate The current date.
      * @param firstName   The first name.
@@ -46,7 +46,7 @@ public class PrintProgram {
     }
 
     /**
-     * Get the current date in the format "yyyy-MM-dd".
+     * Retrieves the current date in the format "yyyy-MM-dd".
      *
      * @return The current date.
      */

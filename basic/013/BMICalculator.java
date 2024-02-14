@@ -6,19 +6,10 @@
  * @since 17.0 (minimum Java version)
  */
 public class BMICalculator {
-    /**
-     * Exercise: 1.3
-     * Write the BMI calculator program.
-     *
-     * @param args Command line arguments. Not used.
-     */
-    public static void main(String[] args) {
-        BMICalculator calculator = new BMICalculator();
-        String result = calculator.calculateAndDisplayBMI(55, 1.75);
-        System.out.println(result);
-    }
 
     /**
+     * Exercise: 1.3 Write the BMI calculator program.
+     *
      * Calculates the BMI based on weight and height.
      *
      * @param weight The weight in kilograms.
@@ -55,5 +46,16 @@ public class BMICalculator {
     public String calculateAndDisplayBMI(double weight, double height) {
         double bmi = calculateBMI(weight, height);
         return displayResults(weight, height, bmi);
+    }
+
+    /**
+     * Main method to execute the BMI calculator program.
+     *
+     * @param args Command line arguments (not used).
+     */
+    public static void main(String[] args) {
+        BMICalculator calculator = new BMICalculator();
+        String result = calculator.calculateAndDisplayBMI(55, 1.75);
+        System.out.println(result);
     }
 }

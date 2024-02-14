@@ -7,19 +7,10 @@
  * @since 17.0 (minimum Java version)
  */
 public class ConeCalculator {
-    /**
-     * Exercise: 1.5
-     * Write the cone calculator program.
-     *
-     * @param args Command line arguments. Not used.
-     */
-    public static void main(String[] args) {
-        ConeCalculator calculator = new ConeCalculator();
-        String result = calculator.calculateAndDisplayConeVolume(3, 4);
-        System.out.println(result);
-    }
 
     /**
+     * Exercise: 1.5 Write the cone calculator program.
+     *
      * Calculates the volume of a cone given its radius and height.
      *
      * @param radius The radius of the cone.
@@ -52,5 +43,16 @@ public class ConeCalculator {
      */
     public String displayResults(double radius, double height, double volume) {
         return String.format("Radius (r): %.2f\nHeight (h): %.2f\nVolume    : %.2f", radius, height, volume);
+    }
+
+    /**
+     * Main method to demonstrate the use of the calculateAndDisplayConeVolume method.
+     *
+     * @param args Command line arguments. Not used.
+     */
+    public static void main(String[] args) {
+        ConeCalculator calculator = new ConeCalculator();
+        String result = calculator.calculateAndDisplayConeVolume(3, 4);
+        System.out.println(result);
     }
 }
