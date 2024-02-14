@@ -19,8 +19,6 @@ public class HelloWorld {
     }
 
     /**
-     * Exercise: 1.1 Write the Hello World program.
-     *
      * Prints a formatted box containing the provided name.
      *
      * @param name The name to be included in the box.
