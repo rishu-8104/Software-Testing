@@ -3,7 +3,6 @@
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
  */
-
 public class TaxCalculator {
 
     /**

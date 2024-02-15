@@ -6,12 +6,12 @@
 public class InchToCentimeterConverter {
 
     /**
-    * Represents an array of inches values.
+    * @param inches Represents an array of inches values.
     */
     private double[] inches;
 
     /**
-    * Represents an array of centemeter values.
+    * @param centimeters an array of centemeter values.
     */
     private double[] centimeters;
 

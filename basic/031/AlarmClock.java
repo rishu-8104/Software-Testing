@@ -4,7 +4,7 @@
  * @since 17.0 (minimum Java version)
  */
 public class AlarmClock {
-    
+
     /**
      * Emulates an alarm clock by counting backwards until reaching 1, then displaying "ALARM!".
      *

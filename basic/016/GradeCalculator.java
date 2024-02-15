@@ -3,13 +3,12 @@
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
  */
-
 public class GradeCalculator {
-    
+
     /**
      * Writes the GradeCalculator program.
      *
-     * @param args Command line arguments. Not used.
+     * @param args Command line arguments.
      */
     public static void main(String[] args) {
         GradeCalculator calculator = new GradeCalculator();

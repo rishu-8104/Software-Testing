@@ -6,7 +6,7 @@
 public class TemperatureReport {
 
     /**
-    * Represents an array of temperature values.
+    * @param tempereture Represents an array of temperature values.
     */
     private double[] temperatures;
 
