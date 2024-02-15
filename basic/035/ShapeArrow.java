@@ -1,7 +1,4 @@
 /**
- * The ShapeArrow class generates and displays a shape resembling an arrow.
- * The size of the arrow is determined by the specified size and character.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -48,7 +45,7 @@ public class ShapeArrow {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

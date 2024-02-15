@@ -1,7 +1,4 @@
 /**
- * The GeometryCalculator class calculates the area of a circle based on its radius.
- * It provides a method to calculate the area of a circle.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -19,7 +16,7 @@ public class GeometryCalculator {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

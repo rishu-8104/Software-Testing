@@ -1,7 +1,4 @@
 /**
- * The InchToCentimeterConverter class converts an array of inch values to centimeters.
- * It then displays the conversions.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -40,7 +37,7 @@ public class InchToCentimeterConverter {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      * @return

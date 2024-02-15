@@ -2,9 +2,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * The MorseCodeConverter class converts a phone number string into Morse code for numbers.
- * It provides a method to perform this conversion.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -46,7 +43,7 @@ public class MorseCodeConverter {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

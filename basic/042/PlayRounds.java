@@ -1,7 +1,4 @@
 /**
- * The PlayRounds class determines how many rounds a player can afford to play until running out of money.
- * It provides a method to calculate the number of rounds.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -20,7 +17,7 @@ public class PlayRounds {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

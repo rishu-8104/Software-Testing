@@ -1,7 +1,4 @@
 /**
- * The ConeCalculator class calculates and displays the volume of a cone.
- * It provides methods to calculate the volume of a cone and display the results.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -9,8 +6,6 @@
 public class ConeCalculator {
 
     /**
-     * Exercise: 1.5 Write the cone calculator program.
-     *
      * Calculates the volume of a cone given its radius and height.
      *
      * @param radius The radius of the cone.
@@ -46,7 +41,7 @@ public class ConeCalculator {
     }
 
     /**
-     * Main method to demonstrate the use of the calculateAndDisplayConeVolume method.
+     * Demonstrates the use of the calculateAndDisplayConeVolume method.
      *
      * @param args Command line arguments. Not used.
      */

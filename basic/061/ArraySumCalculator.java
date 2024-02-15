@@ -1,6 +1,4 @@
 /**
- * The ArraySumCalculator class provides a method to calculate the sum of an integer array.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -23,7 +21,7 @@ public class ArraySumCalculator {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

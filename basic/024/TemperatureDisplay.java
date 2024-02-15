@@ -1,7 +1,4 @@
 /**
- * The TemperatureDisplay class determines the weather condition based on city and temperature.
- * It provides a method to determine the weather condition and display the corresponding label.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -12,8 +9,7 @@ public class TemperatureDisplay {
     final int VANCOUVER = 2;
 
     /**
-     * Exercise: 2.4
-     * Write a program that solves the problem using logical operators.
+     * Writes a program that solves the problem using logical operators.
      *
      * @param args Command line arguments. Not used.
      */

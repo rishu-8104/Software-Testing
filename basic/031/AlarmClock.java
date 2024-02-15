@@ -1,7 +1,4 @@
 /**
- * The AlarmClock class emulates an alarm clock by counting backwards until reaching 1, then displaying "ALARM!".
- * It provides a method to emulate an alarm clock.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)

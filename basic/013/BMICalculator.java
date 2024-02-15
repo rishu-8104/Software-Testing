@@ -1,5 +1,5 @@
 /**
- * The BMICalculator class calculates and displays the BMI (Body Mass Index).
+ * Displays the BMI (Body Mass Index).
  *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
@@ -8,8 +8,6 @@
 public class BMICalculator {
 
     /**
-     * Exercise: 1.3 Write the BMI calculator program.
-     *
      * Calculates the BMI based on weight and height.
      *
      * @param weight The weight in kilograms.
@@ -49,7 +47,7 @@ public class BMICalculator {
     }
 
     /**
-     * Main method to execute the BMI calculator program.
+     * executes the BMI calculator program.
      *
      * @param args Command line arguments (not used).
      */

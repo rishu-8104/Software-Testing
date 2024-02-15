@@ -1,7 +1,4 @@
 /**
- * The GenderHeightDisplay class determines the classification of individuals based on gender and height.
- * It provides a method to classify individuals and display the corresponding label.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -11,8 +8,7 @@ public class GenderHeightDisplay {
     final int FEMALE = 1;
 
     /**
-     * Exercise: 2.3
-     * Write a program that solves the problem using logical operators.
+     * Writes a program that solves the problem using logical operators.
      *
      * @param args Command line arguments. Not used.
      */

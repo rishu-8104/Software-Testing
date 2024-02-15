@@ -1,7 +1,4 @@
 /**
- * The Pythagoras class calculates the hypotenuse of a right triangle using the Pythagorean theorem.
- * It provides a method to calculate the hypotenuse given the lengths of the other two sides.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0126 (last modified)
  * @since 17.0 (minimum Java version)
@@ -9,8 +6,6 @@
 public class Pythagoras {
 
     /**
-     * Exercise: 1.4 Write the Pythagoras program.
-     *
      * Calculates the length of the hypotenuse of a right triangle given the lengths of the other two sides.
      *
      * @param a The length of one side of the right triangle.
@@ -23,7 +18,7 @@ public class Pythagoras {
     }
 
     /**
-     * Main method to demonstrate the use of the calculate method.
+     * Demonstrates the use of the calculate method.
      *
      * @param args Command line arguments. Not used.
      */

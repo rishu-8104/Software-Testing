@@ -1,7 +1,4 @@
 /**
- * The EventCalendar class displays events based on date and time.
- * It provides a method to determine if there is an event at the specified time.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -12,8 +9,7 @@ public class EventCalendar {
     final static String SATURDAY = "Sat";
 
     /**
-     * Exercise: 2.5
-     * Write a program that displays events based on date and time.
+     * Writes a program that displays events based on date and time.
      *
      * @param args Command line arguments. Not used.
      */

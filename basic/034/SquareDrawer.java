@@ -1,7 +1,4 @@
 /**
- * The SquareDrawer class draws a square to the screen based on the defined size.
- * It provides a method to draw the square.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -39,7 +36,7 @@ public class SquareDrawer {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

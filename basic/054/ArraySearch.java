@@ -2,9 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The ArraySearch class searches for values within a specified range in an array.
- * It then displays the values found within the range.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -29,7 +26,7 @@ public class ArraySearch {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

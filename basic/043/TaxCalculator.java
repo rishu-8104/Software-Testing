@@ -1,7 +1,4 @@
 /**
- * The TaxCalculator class calculates taxes based on the yearly salary and tax percentage.
- * It provides a method to calculate yearly taxes.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -20,7 +17,7 @@ public class TaxCalculator {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

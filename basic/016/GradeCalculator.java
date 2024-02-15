@@ -1,16 +1,11 @@
 /**
- * The GradeCalculator class calculates the final grade based on the weighted average of exam,
- * design, and implementation grades.
- * It provides methods to calculate the final grade and display the results.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
  */
 public class GradeCalculator {
     /**
-     * Exercise: 1.6
-     * Write the GradeCalculator program.
+     * Writes the GradeCalculator program.
      *
      * @param args Command line arguments. Not used.
      */

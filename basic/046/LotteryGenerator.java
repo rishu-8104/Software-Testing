@@ -3,10 +3,6 @@ import java.util.Random;
 import java.util.Set;
 
 /**
- * The LotteryGenerator class generates lottery numbers.
- * It provides a method to generate seven unique lottery numbers between 1 and 40, inclusive.
- * The numbers are generated using the rollDice method.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0206 (last modified)
  * @since 17.0 (minimum Java version)
@@ -15,7 +11,6 @@ public class LotteryGenerator {
 
     /**
      * Generates seven unique lottery numbers between 1 and 40, inclusive.
-     * Each number is generated using the rollDice method.
      *
      * @return An array containing seven unique lottery numbers.
      */
@@ -40,7 +35,7 @@ public class LotteryGenerator {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

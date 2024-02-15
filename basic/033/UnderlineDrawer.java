@@ -1,7 +1,4 @@
 /**
- * The UnderlineDrawer class draws an underline below a given string.
- * It provides a method to draw the underline.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -31,7 +28,7 @@ public class UnderlineDrawer {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

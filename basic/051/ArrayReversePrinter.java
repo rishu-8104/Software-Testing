@@ -1,7 +1,4 @@
 /**
- * The ArrayReversePrinter class displays values in an array in reverse order.
- * It provides a method to print the array elements in reverse.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -30,7 +27,7 @@ public class ArrayReversePrinter {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

@@ -1,7 +1,4 @@
 /**
- * The TemperatureReport class stores temperature values in an array and generates a report.
- * It calculates the minimum, maximum, and average temperatures.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -53,7 +50,7 @@ public class TemperatureReport {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

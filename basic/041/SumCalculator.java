@@ -1,7 +1,4 @@
 /**
- * The MultiplicationTable class generates and displays a multiplication table of a specified size.
- * The size of the table determines the number of rows and columns in the table.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -23,7 +20,7 @@ public class SumCalculator {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

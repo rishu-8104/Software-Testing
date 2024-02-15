@@ -1,15 +1,11 @@
 /**
- * The TaxCalculator class calculates taxes based on total earnings and stock earnings.
- * It provides methods to calculate taxes and display the results.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
  */
 public class TaxCalculator {
     /**
-     * Exercise: 1.7
-     * Write the TaxCalculator program.
+     * Writes the TaxCalculator program.
      *
      * @param args Command line arguments. Not used.
      */

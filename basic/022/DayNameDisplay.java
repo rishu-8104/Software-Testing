@@ -1,7 +1,4 @@
 /**
- * The DayNameDisplay class displays the name of the day corresponding to the given day number.
- * It provides a method to display the day name.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -16,8 +13,7 @@ public class DayNameDisplay {
     final int SUNDAY = 7;
 
     /**
-     * Exercise: 2.2
-     * Write the DayNameDisplay program.
+     * Writes the DayNameDisplay program.
      *
      * @param args Command line arguments. Not used.
      */

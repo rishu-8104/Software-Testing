@@ -1,9 +1,6 @@
 import java.util.Random;
 
 /**
- * The DiceRoller class simulates rolling a dice.
- * It provides a method to generate a random number between 1 and 6, inclusive.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0206 (last modified)
  * @since 17.0 (minimum Java version)
@@ -29,7 +26,7 @@ public class DiceRoller {
     }
 
     /**
-     * Main method to run the program.
+     * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
      */

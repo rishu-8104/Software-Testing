@@ -1,7 +1,4 @@
 /**
- * The ColumnNumbersDisplay class displays 10-based column numbers to the screen with a configurable length.
- * It provides a method to display the numbers.
- *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
  * @since 17.0 (minimum Java version)
@@ -26,7 +23,7 @@ public class ColumnNumbersDisplay {
     }
 
     /**
-     * Main method to run the program.
+     * Methods to run the program.
      *
      * @param args Command line arguments. Not used.
      */
