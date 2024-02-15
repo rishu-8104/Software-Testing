@@ -7,6 +7,7 @@ import java.util.List;
  * @since 17.0 (minimum Java version)
  */
 public class ArraySearch {
+    
     /**
      * Searches for values within the specified range in the array.
      *

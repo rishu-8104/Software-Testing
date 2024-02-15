@@ -7,6 +7,10 @@ import java.util.Map;
  * @since 17.0 (minimum Java version)
  */
 public class MorseCodeConverter {
+    
+    /**
+     * Map containing the Morse code equivalents of characters.
+     */
     private final Map<Character, String> morseCodeMap;
 
     /**

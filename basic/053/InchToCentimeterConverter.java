@@ -4,7 +4,15 @@
  * @since 17.0 (minimum Java version)
  */
 public class InchToCentimeterConverter {
+
+    /**
+    * Represents an array of inches values.
+    */
     private double[] inches;
+
+    /**
+    * Represents an array of centemeter values.
+    */
     private double[] centimeters;
 
     /**

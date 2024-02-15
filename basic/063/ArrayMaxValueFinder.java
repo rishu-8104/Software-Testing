@@ -35,4 +35,3 @@ public class ArrayMaxValueFinder {
         System.out.println("Maximum value of the array: " + max);
     }
 }
-

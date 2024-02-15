@@ -47,7 +47,7 @@ public class BMICalculator {
     }
 
     /**
-     * executes the BMI calculator program.
+     * Executes the BMI calculator program.
      *
      * @param args Command line arguments (not used).
      */

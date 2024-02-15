@@ -11,8 +11,6 @@ import java.util.Date;
 public class PrintProgram {
 
     /**
-     * Exercise: 1.2 Write the Print program.
-     *
      * Displays the provided information.
      *
      * @param args Command line arguments. Not used.

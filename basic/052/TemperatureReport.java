@@ -4,6 +4,10 @@
  * @since 17.0 (minimum Java version)
  */
 public class TemperatureReport {
+
+    /**
+    * Represents an array of temperature values.
+    */
     private double[] temperatures;
 
     /**
