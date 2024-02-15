@@ -7,8 +7,8 @@ import java.util.Random;
  */
 public class DiceRoller {
 
-     /**
-     * @param Random number generator used to simulate dice rolling.
+    /**
+     * Randoms number generator used to simulate dice rolling.
      */
     private Random random;
 

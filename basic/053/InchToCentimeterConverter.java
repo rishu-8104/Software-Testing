@@ -6,13 +6,13 @@
 public class InchToCentimeterConverter {
 
     /**
-    * @param inches Represents an array of inches values.
-    */
+     * Represents an array of inches values.
+     */
     private double[] inches;
 
     /**
-    * @param centimeters an array of centemeter values.
-    */
+     * Represents an array of centimeter values.
+     */
     private double[] centimeters;
 
     /**
@@ -48,7 +48,6 @@ public class InchToCentimeterConverter {
      * Mains method to run the program.
      *
      * @param args Command line arguments. Not used.
-     * @return
      */
     public static void main(String[] args) {
         double[] inches = {1, 2, 3};
