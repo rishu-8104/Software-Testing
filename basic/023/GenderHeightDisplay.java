@@ -20,7 +20,7 @@ public class GenderHeightDisplay {
         GenderHeightDisplay genderHeightDisplay = new GenderHeightDisplay();
 
         final int gender = genderHeightDisplay.MALE; // Change this value to MALE or FEMALE as desired
-        int height = 175; // Change this value to the individual's height
+        int height = 185; // Change this value to the individual's height
 
         String result = genderHeightDisplay.classifyIndividual(gender, height);
         System.out.println(result);

@@ -1,5 +1,5 @@
 /**
- * The PrintProgram class demonstrates printing information.
+ * Demonstrates printing information.
  *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
  * @version 2024.0131 (last modified)
