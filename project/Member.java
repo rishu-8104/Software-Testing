@@ -7,6 +7,7 @@ public class Member {
     private String name;
     private String id;
     private List<Book> borrowedBooks;
+    private double fees;
 
     // Constructor
     public Member(String name, String id) {
@@ -49,4 +50,24 @@ public class Member {
             throw new IllegalArgumentException("This book was not borrowed by the member.");
         }
     }
+
+    public double getFees() {
+        return fees;
+    }
+
+    public void addFees(double amount) {
+        this.fees += amount;
+    }
+
+    public void payFees(double amount) {
+        this.fees -= amount;
+        if (this.fees < 0) {
+            this.fees = 0; // Prevent fees from going negative
+        }
+    }
+
+    public void clearFees() {
+        this.fees = 0;
+    }
+
 }
