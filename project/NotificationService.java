@@ -9,10 +9,8 @@
  * @version 2024.0319 (last modified)
  * @since 17.0 (minimum Java version)
  */
-
 import java.util.HashSet;
 import java.util.Set;
-
 public class NotificationService {
     private Set<Member> subscribedMembers;
 

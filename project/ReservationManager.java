@@ -8,11 +8,10 @@
  * @version 2024.0318 (last modified)
  * @since 17.0 (minimum Java version)
  */
-
 import java.util.HashMap;
 import java.util.Map;
-
 public class ReservationManager {
+
     private Map<String, String> bookReservations; // Maps book ISBN to member ID
     private NotificationService notificationService;
 

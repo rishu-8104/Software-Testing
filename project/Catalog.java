@@ -8,7 +8,6 @@
  * @version 2024.0318 (last modified)
  * @since 17.0 (minimum Java version)
  */
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
