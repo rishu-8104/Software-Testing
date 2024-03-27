@@ -28,7 +28,7 @@ public class FeeCalculator {
      * @return The calculated fee.
      */
     public double calculateFee(long daysOverdue) {
-        return daysOverdue * FEE_PER_DAY;
+        return Math.max(0, daysOverdue) * FEE_PER_DAY;
     }
 
     /**

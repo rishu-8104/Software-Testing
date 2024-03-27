@@ -27,7 +27,12 @@ public class Catalog {
      * @param book The book to be added to the catalog.
      */
     public void addBook(Book book) {
-        books.add(book);
+        boolean exists = books.stream().anyMatch(b -> b.getISBN().equals(book.getISBN()));
+        if (!exists) {
+            books.add(book);
+        } else {
+            System.out.println("Book with ISBN " + book.getISBN() + " already exists.");
+        }
     }
 
     /**
