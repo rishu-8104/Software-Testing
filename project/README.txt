@@ -21,4 +21,3 @@ Once the application is up and running, you can access it through a web browser.
 - **Manage Members:** Register new members, update member details, or delete member records.
 - **Loan Books:** Check out books to members and specify the due date.
 - **Return Books:** Mark borrowed books as returned and calculate any applicable fines.
-
