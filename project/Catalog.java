@@ -5,13 +5,13 @@
  * a library's book inventory.
  *
  * @author Rishu Kumar <Rishu.kumar@tuni.fi>
- * @version 2024.0131 (last modified)
+ * @version 2024.0318 (last modified)
  * @since 17.0 (minimum Java version)
  */
 
- import java.util.ArrayList;
- import java.util.List;
- import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 public class Catalog {
     private List<Book> books;
 
