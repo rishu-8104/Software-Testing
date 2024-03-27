@@ -1,33 +1,49 @@
-package project;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FeeCalculator {
-    private static final double FEE_PER_DAY = 0.50; // Example fee per day overdue
+    private Map<String, Double> memberFees; // Maps member ID to outstanding fees
+    private static final double FEE_PER_DAY = 0.5; // Fixed fee per day overdue
 
-    // Calculates the fee based on days overdue
-    public static double calculateFee(long daysOverdue) {
+    public FeeCalculator() {
+        this.memberFees = new HashMap<>();
+    }
+
+    public double calculateFee(long daysOverdue) {
         return daysOverdue * FEE_PER_DAY;
     }
 
-    // Checks if a member has outstanding fees
-    public static boolean hasOutstandingFees(Member member) {
-        return member.getFees() > 0;
+    public boolean hasOutstandingFees(Member member) {
+        return memberFees.getOrDefault(member.getID(), 0.0) > 0;
     }
 
-    // Records a payment of fees for a member
-    public static void payFees(Member member, double amount) {
-        member.payFees(amount);
-        System.out.println("Paid $" + amount + " of fees for " + member.getName() + ". Remaining fees: $" + member.getFees());
+    public void payFees(Member member, double amount) {
+        double currentFees = memberFees.getOrDefault(member.getID(), 0.0);
+        double updatedFees = Math.max(0, currentFees - amount); // Prevent negative fees
+        memberFees.put(member.getID(), updatedFees);
+
+        if(updatedFees == 0) {
+            System.out.println("All fees cleared for " + member.getName());
+        } else {
+            System.out.println("Payment recorded for " + member.getName() + ". Outstanding fees: $" + updatedFees);
+        }
     }
 
-    // Gets the total outstanding fees for a member
-    public static double getOutstandingFees(Member member) {
-        return member.getFees();
+    public double getOutstandingFees(Member member) {
+        return memberFees.getOrDefault(member.getID(), 0.0);
     }
 
-    // Clears all fees for a member
-    public static void clearMemberFees(Member member) {
-        member.clearFees();
-        System.out.println("All fees cleared for " + member.getName());
+    public void clearMemberFees(Member member) {
+        if (hasOutstandingFees(member)) {
+            memberFees.put(member.getID(), 0.0);
+            System.out.println("All fees cleared for " + member.getName());
+        }
     }
+
+    public void addFee(Member member, double amount) {
+        double currentFees = memberFees.getOrDefault(member.getID(), 0.0);
+        memberFees.put(member.getID(), currentFees + amount);
+        System.out.println("Fee of $" + amount + " added for " + member.getName() + ". Total outstanding fees: $" + (currentFees + amount));
+    }
+
 }
-

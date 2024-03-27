@@ -1,5 +1,3 @@
-package project;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,64 +5,52 @@ import java.util.List;
 import java.util.Map;
 
 public class LoanManager {
-    private Map<String, LoanRecord> loans; // Maps ISBN to a loan record
+    private Catalog catalog;
+    private Map<String, String> bookLoans; // Maps ISBN to memberId
+    private Map<String, LocalDate> dueDates; // Maps ISBN to due date
 
-    // Constructor
-    public LoanManager() {
-        this.loans = new HashMap<>();
+    public LoanManager(Catalog catalog) {
+        this.catalog = catalog;
+        this.bookLoans = new HashMap<>();
+        this.dueDates = new HashMap<>();
     }
 
-    // Nested class to hold loan information
-    private static class LoanRecord {
-        String memberId;
-        LocalDate dueDate;
-
-        LoanRecord(String memberId, LocalDate dueDate) {
-            this.memberId = memberId;
-            this.dueDate = dueDate;
+    public void checkoutBook(String isbn, String memberId) {
+        List<Book> availableBooks = catalog.getAvailableBooks();
+        for (Book book : availableBooks) {
+            if (book.getISBN().equals(isbn) && book.isAvailable()) {
+                book.borrowBook(); // Update book status
+                bookLoans.put(isbn, memberId);
+                dueDates.put(isbn, LocalDate.now().plusWeeks(2)); // Assuming a 2-week loan period
+                System.out.println("Book checked out to " + memberId + ". Due date: " + dueDates.get(isbn).toString());
+                return;
+            }
         }
+        System.out.println("Book is not available for checkout.");
     }
 
-    // Checks out a book to a member
-    public void checkoutBook(String isbn, String memberId, LocalDate dueDate) {
-        if (isBookAvailable(isbn)) {
-            loans.put(isbn, new LoanRecord(memberId, dueDate));
+    public void returnBook(String isbn, String memberId) {
+        if (bookLoans.containsKey(isbn) && bookLoans.get(isbn).equals(memberId)) {
+            bookLoans.remove(isbn);
+            dueDates.remove(isbn);
+            catalog.findBookByISBN(isbn).returnBook(); // Ensure you implement this method in Catalog
+            System.out.println("Book returned successfully.");
         } else {
-            throw new IllegalStateException("Book with ISBN " + isbn + " is not available for checkout.");
+            System.out.println("This book was not loaned to this member.");
         }
     }
 
-    // Returns a book to the library
-    public void returnBook(String isbn) {
-        if (loans.containsKey(isbn)) {
-            loans.remove(isbn);
-        } else {
-            throw new IllegalStateException("Book with ISBN " + isbn + " is not currently loaned out.");
-        }
-    }
-
-    // Lists all current loans
     public List<String> listLoans() {
-        List<String> currentLoans = new ArrayList<>();
-        for (Map.Entry<String, LoanRecord> entry : loans.entrySet()) {
-            currentLoans.add("ISBN: " + entry.getKey() + ", Member ID: " + entry.getValue().memberId + ", Due Date: " + entry.getValue().dueDate);
-        }
-        return currentLoans;
+        List<String> loans = new ArrayList<>();
+        bookLoans.forEach((isbn, memberId) -> loans.add("ISBN: " + isbn + ", Member ID: " + memberId + ", Due Date: " + dueDates.get(isbn)));
+        return loans;
     }
 
-    // Checks if a book is available for checkout
     public boolean isBookAvailable(String isbn) {
-        return !loans.containsKey(isbn);
+        return catalog.getAvailableBooks().stream().anyMatch(book -> book.getISBN().equals(isbn));
     }
 
-    // Gets the due date for a returned book
     public LocalDate getDueDate(String isbn) {
-        LoanRecord record = loans.get(isbn);
-        if (record != null) {
-            return record.dueDate;
-        } else {
-            throw new IllegalStateException("No loan record found for ISBN " + isbn);
-        }
+        return dueDates.get(isbn);
     }
 }
-

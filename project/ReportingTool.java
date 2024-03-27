@@ -1,56 +1,52 @@
-package project;
-
 import java.time.LocalDate;
-import java.util.List;
 
 public class ReportingTool {
     private Catalog catalog;
     private LoanManager loanManager;
+    private MemberManager memberManager;
     private FeeCalculator feeCalculator;
 
-    // Constructor
-    public ReportingTool(Catalog catalog, LoanManager loanManager, FeeCalculator feeCalculator) {
+    public ReportingTool(Catalog catalog, LoanManager loanManager, MemberManager memberManager, FeeCalculator feeCalculator) {
         this.catalog = catalog;
         this.loanManager = loanManager;
+        this.memberManager = memberManager;
         this.feeCalculator = feeCalculator;
     }
 
-    // Generates a report of all current loans
     public void generateLoanReport() {
-        List<String> loans = loanManager.listLoans();
         System.out.println("Current Loans Report:");
-        loans.forEach(System.out::println);
+        loanManager.listLoans().forEach(System.out::println);
     }
 
-    // Generates a report of all overdue books
-    public void generateOverdueReport() {
+    public void generateOverdueReport(LocalDate currentDate) {
         System.out.println("Overdue Loans Report:");
-        // Assuming a method to get overdue loans exists
-        loanManager.listOverdueLoans().forEach(
-                (isbn, details) -> System.out.println("ISBN: " + isbn + ", Details: " + details)
-        );
+        loanManager.listLoans().stream()
+                .filter(loan -> loanManager.getDueDate(loan.split(",")[0].split(":")[1].trim()).isBefore(currentDate))
+                .forEach(System.out::println);
     }
 
-    // Generates a report of all available books
     public void generateAvailabilityReport() {
-        List<Book> availableBooks = catalog.getAvailableBooks();
         System.out.println("Available Books Report:");
-        availableBooks.forEach(book -> System.out.println(book.getTitle() + " by " + book.getAuthor()));
+        catalog.getAvailableBooks().forEach(book ->
+            System.out.println(book.getTitle() + " by " + book.getAuthor()));
     }
 
-    // Generates a report for a specific member
-    public void generateMemberReport(Member member) {
-        System.out.println("Report for Member: " + member.getName());
-        System.out.println("Borrowed Books:");
-        member.getBorrowedBooks().forEach(book -> System.out.println(book.getTitle() + " by " + book.getAuthor()));
-        System.out.println("Outstanding Fees: $" + member.getFees());
+    public void generateMemberReport(String memberId) {
+        Member member = memberManager.findMemberByID(memberId);
+        if (member != null) {
+            System.out.println("Report for member: " + member.getName());
+            System.out.println("Borrowed Books:");
+            member.getBorrowedBooks().forEach(book ->
+                System.out.println(book.getTitle() + " by " + book.getAuthor()));
+        } else {
+            System.out.println("No member found with ID: " + memberId);
+        }
     }
 
-    // Generates a report of fees collected
     public void generateFeesCollectedReport() {
-        // Assuming a method to calculate total fees exists
-        double totalFees = feeCalculator.calculateTotalFeesCollected();
+        double totalFees = memberManager.listAllMembers().stream()
+                .mapToDouble(member -> feeCalculator.getOutstandingFees(member))
+                .sum();
         System.out.println("Total Fees Collected: $" + totalFees);
     }
 }
-

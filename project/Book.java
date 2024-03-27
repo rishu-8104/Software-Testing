@@ -1,20 +1,17 @@
-package project;
-
 public class Book {
     private String title;
     private String author;
-    private String isbn;
+    private String ISBN;
     private boolean isAvailable;
 
-    // Constructor
-    public Book(String title, String author, String isbn) {
+    public Book(String title, String author, String ISBN) {
         this.title = title;
         this.author = author;
-        this.isbn = isbn;
-        this.isAvailable = true; // By default, the book is available for borrowing.
+        this.ISBN = ISBN;
+        this.isAvailable = true; // Initially, all books are available
     }
 
-    // Getters
+    // Getters and methods
     public String getTitle() {
         return title;
     }
@@ -24,25 +21,22 @@ public class Book {
     }
 
     public String getISBN() {
-        return isbn;
+        return ISBN;
     }
 
     public boolean isAvailable() {
         return isAvailable;
     }
 
-    // Method to mark the book as borrowed
     public void borrowBook() {
-        if(isAvailable) {
+        if (isAvailable) {
             isAvailable = false;
         } else {
-            throw new IllegalStateException("This book is currently not available for borrowing.");
+            System.out.println("Book is not available for borrowing.");
         }
     }
 
-    // Optionally, you might want to add a method to mark the book as returned
     public void returnBook() {
         isAvailable = true;
     }
 }
-

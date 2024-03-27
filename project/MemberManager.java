@@ -1,54 +1,40 @@
-package project;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MemberManager {
-    private Map<String, Member> members;
+    private List<Member> members;
 
-    // Constructor
     public MemberManager() {
-        this.members = new HashMap<>();
+        this.members = new ArrayList<>();
     }
 
-    // Adds a new member to the library
     public void addMember(Member member) {
-        if (!members.containsKey(member.getID())) {
-            members.put(member.getID(), member);
-            System.out.println("Member " + member.getName() + " added successfully.");
-        } else {
-            System.out.println("Member with ID " + member.getID() + " already exists.");
-        }
+        members.add(member);
+        System.out.println("Member added: " + member.getName() + " with ID " + member.getID());
     }
 
-    // Removes a member from the library
     public void removeMember(String memberId) {
-        if (members.containsKey(memberId)) {
-            members.remove(memberId);
-            System.out.println("Member with ID " + memberId + " removed successfully.");
-        } else {
-            System.out.println("Member with ID " + memberId + " does not exist.");
-        }
+        members.removeIf(member -> member.getID().equals(memberId));
+        System.out.println("Member with ID " + memberId + " removed from the library.");
     }
 
-    // Finds a member by ID
     public Member findMemberByID(String id) {
-        return members.get(id); // Returns null if the member is not found
+        for (Member member : members) {
+            if (member.getID().equals(id)) {
+                return member;
+            }
+        }
+        return null; // Consider handling this case properly
     }
 
-    // Finds members by name
     public List<Member> findMembersByName(String name) {
-        return members.values().stream()
+        return members.stream()
                 .filter(member -> member.getName().equalsIgnoreCase(name))
                 .collect(Collectors.toList());
     }
 
-    // Lists all members of the library
     public List<Member> listAllMembers() {
-        return new ArrayList<>(members.values());
+        return new ArrayList<>(members);
     }
 }
-
