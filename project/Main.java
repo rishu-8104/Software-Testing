@@ -1,3 +1,14 @@
+/**
+ * The main entry point for the Library Management System. This class demonstrates the initialization and usage
+ * of various components within the system, including the catalog, loan manager, notification service, and member management.
+ * It simulates a series of operations such as adding books, checking out and returning books, sending notifications, and managing fees.
+ * The system also demonstrates reservation management and report generation, showcasing the comprehensive capabilities of the library system.
+ *
+ * @author Rishu Kumar <Rishu.kumar@tuni.fi>
+ * @version 2024.0318 (last modified)
+ * @since 17.0 (minimum Java version)
+ */
+
 import java.time.LocalDate;
 
 public class Main {
