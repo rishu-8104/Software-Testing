@@ -87,7 +87,10 @@ public class FeeCalculator {
      * @param member The member to add fees to.
      * @param amount The amount of fees to add.
      */
-    public void addFee(Member member, double amount) {
+    public void addFee(Member member, double amount) throws IllegalArgumentException {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Amount cannot be negative");
+        }
         double currentFees = memberFees.getOrDefault(member.getID(), 0.0);
         memberFees.put(member.getID(), currentFees + amount);
         System.out.println("Fee of $" + amount + " added for " + member.getName() + ". Total outstanding fees: $" + (currentFees + amount));
