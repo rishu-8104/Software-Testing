@@ -74,7 +74,18 @@ public class LoanManager {
      */
     public List<String> listLoans() {
         List<String> loans = new ArrayList<>();
-        bookLoans.forEach((isbn, memberId) -> loans.add("ISBN: " + isbn + ", Member ID: " + memberId + ", Due Date: " + dueDates.get(isbn)));
+        try {
+            bookLoans.forEach((isbn, memberId) -> {
+                LocalDate dueDate = dueDates.get(isbn);
+                if (dueDate != null) {
+                    loans.add("ISBN: " + isbn + ", Member ID: " + memberId + ", Due Date: " + dueDate.toString());
+                } else {
+                    System.out.println("Due date not found for ISBN: " + isbn);
+                }
+            });
+        } catch (NullPointerException e) {
+            System.out.println("NullPointerException occurred while listing loans: " + e.getMessage());
+        }
         return loans;
     }
 
@@ -85,7 +96,12 @@ public class LoanManager {
      * @return True if the book is available, false otherwise.
      */
     public boolean isBookAvailable(String isbn) {
-        return catalog.getAvailableBooks().stream().anyMatch(book -> book.getISBN().equals(isbn));
+        try {
+            return catalog.getAvailableBooks().stream().anyMatch(book -> book.getISBN().equals(isbn));
+        } catch (Exception e) {
+            System.out.println("Exception occurred while checking book availability: " + e.getMessage());
+            return false;
+        }
     }
 
     /**

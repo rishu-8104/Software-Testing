@@ -4,127 +4,305 @@ import static org.junit.Assert.*;
 
 public class BookTest {
 
-    private Book book;
-
-    @Before
-    public void setUp() {
-        book = new Book("The Great Gatsby", "F. Scott Fitzgerald", "123456789");
-    }
-
     @Test
-    public void testGetTitle() {
-        assertEquals("The Great Gatsby", book.getTitle());
-    }
+    public void testBookConstructorValidInput() {
+        String title = "To Kill a Mockingbird";
+        String author = "Harper Lee";
+        String ISBN = "9780061120084";
 
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing Book constructor with valid input...");
+        System.out.println("Title: " + book.getTitle());
+        System.out.println("Author: " + book.getAuthor());
+        System.out.println("ISBN: " + book.getISBN());
+        System.out.println("Is Available: " + book.isAvailable());
 
-
-    @Test
-    public void testGetAuthor() {
-        assertEquals("F. Scott Fitzgerald", book.getAuthor());
-    }
-
-    @Test
-    public void testGetISBN() {
-        assertEquals("123456789", book.getISBN());
-    }
-
-    @Test
-    public void testIsAvailableInitially() {
+        assertEquals(title, book.getTitle());
+        assertEquals(author, book.getAuthor());
+        assertEquals(ISBN, book.getISBN());
         assertTrue(book.isAvailable());
     }
 
     @Test
-    public void testBorrowBookWhenAvailable() {
+    public void testBookConstructorEmptyTitle() {
+        String title = "";
+        String author = "J.K. Rowling";
+        String ISBN = "9780545010221";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing Book constructor with empty title...");
+        System.out.println("Title: " + book.getTitle());
+        System.out.println("Author: " + book.getAuthor());
+        System.out.println("ISBN: " + book.getISBN());
+        System.out.println("Is Available: " + book.isAvailable());
+
+        assertEquals(title, book.getTitle());
+        assertEquals(author, book.getAuthor());
+        assertEquals(ISBN, book.getISBN());
+        assertTrue(book.isAvailable());
+    }
+
+    @Test
+    public void testBookConstructorNullAuthor() {
+        String title = "Harry Potter and the Philosopher's Stone";
+        String author = null;
+        String ISBN = "9780747532743";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing Book constructor with null author...");
+        System.out.println("Title: " + book.getTitle());
+        System.out.println("Author: " + book.getAuthor());
+        System.out.println("ISBN: " + book.getISBN());
+        System.out.println("Is Available: " + book.isAvailable());
+
+        assertEquals(title, book.getTitle());
+        assertEquals(author, book.getAuthor());
+        assertEquals(ISBN, book.getISBN());
+        assertTrue(book.isAvailable());
+    }
+
+    @Test
+    public void testGetTitle() {
+        String title = "To Kill a Mockingbird";
+        String author = "Harper Lee";
+        String ISBN = "9780061120084";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing getTitle() method...");
+        System.out.println("Title: " + book.getTitle());
+
+        assertEquals(title, book.getTitle());
+    }
+
+    @Test
+    public void testGetTitleEmpty() {
+        String title = "";
+        String author = "J.K. Rowling";
+        String ISBN = "9780545010221";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing getTitle() method with empty title...");
+        System.out.println("Title: " + book.getTitle());
+
+        assertEquals(title, book.getTitle());
+    }
+
+    @Test
+    public void testGetTitleNull() {
+        String title = null;
+        String author = "J.R.R. Tolkien";
+        String ISBN = "9780547928210";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing getTitle() method with null title...");
+        System.out.println("Title: " + book.getTitle());
+
+        assertEquals(title, book.getTitle());
+    }
+
+    @Test
+    public void testGetAuthor() {
+        String title = "To Kill a Mockingbird";
+        String author = "Harper Lee";
+        String ISBN = "9780061120084";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing getAuthor() method...");
+        System.out.println("Author: " + book.getAuthor());
+
+        assertEquals(author, book.getAuthor());
+    }
+
+    @Test
+    public void testGetAuthorEmpty() {
+        String title = "Harry Potter and the Philosopher's Stone";
+        String author = "";
+        String ISBN = "9780747532743";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing getAuthor() method with empty author...");
+        System.out.println("Author: " + book.getAuthor());
+
+        assertEquals(author, book.getAuthor());
+    }
+
+    @Test
+    public void testGetAuthorNull() {
+        String title = "The Hobbit";
+        String author = null;
+        String ISBN = "9780547928210";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing getAuthor() method with null author...");
+        System.out.println("Author: " + book.getAuthor());
+
+        assertEquals(author, book.getAuthor());
+    }
+    @Test
+    public void testGetISBN() {
+        String title = "To Kill a Mockingbird";
+        String author = "Harper Lee";
+        String ISBN = "9780061120084";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing getISBN() method...");
+        System.out.println("ISBN: " + book.getISBN());
+
+        assertEquals(ISBN, book.getISBN());
+    }
+
+    @Test
+    public void testGetISBNEmpty() {
+        String title = "Harry Potter and the Philosopher's Stone";
+        String author = "J.K. Rowling";
+        String ISBN = "";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing getISBN() method with empty ISBN...");
+        System.out.println("ISBN: " + book.getISBN());
+
+        assertEquals(ISBN, book.getISBN());
+    }
+
+    @Test
+    public void testGetISBNNull() {
+        String title = "The Hobbit";
+        String author = "J.R.R. Tolkien";
+        String ISBN = null;
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing getISBN() method with null ISBN...");
+        System.out.println("ISBN: " + book.getISBN());
+
+        assertEquals(ISBN, book.getISBN());
+    }
+
+    @Test
+    public void testIsAvailable() {
+        String title = "To Kill a Mockingbird";
+        String author = "Harper Lee";
+        String ISBN = "9780061120084";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing isAvailable() method...");
+        System.out.println("Is Available: " + book.isAvailable());
+
+        assertTrue(book.isAvailable());
+    }
+
+    @Test
+    public void testIsAvailableAfterBorrowing() {
+        String title = "Harry Potter and the Philosopher's Stone";
+        String author = "J.K. Rowling";
+        String ISBN = "9780545010221";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing isAvailable() method after borrowing...");
         book.borrowBook();
+        System.out.println("Is Available: " + book.isAvailable());
+
         assertFalse(book.isAvailable());
     }
 
     @Test
-    public void testBorrowBookWhenUnavailable() {
-        book.borrowBook(); // First borrow
-        book.borrowBook(); // Attempt to borrow again
-        assertFalse(book.isAvailable()); // The book should still be unavailable
+    public void testIsAvailableAfterReturning() {
+        String title = "The Hobbit";
+        String author = "J.R.R. Tolkien";
+        String ISBN = "9780547928210";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing isAvailable() method after returning...");
+        book.borrowBook();
+        book.returnBook();
+        System.out.println("Is Available: " + book.isAvailable());
+
+        assertTrue(book.isAvailable());
+    }
+
+    @Test
+    public void testBorrowBook() {
+        String title = "To Kill a Mockingbird";
+        String author = "Harper Lee";
+        String ISBN = "9780061120084";
+
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing borrowBook() method...");
+        System.out.println("Initial Availability: " + book.isAvailable());
+
+        book.borrowBook();
+        System.out.println("Availability after borrowing: " + book.isAvailable());
+
+        assertFalse(book.isAvailable());
     }
 
     @Test
     public void testReturnBook() {
-        book.borrowBook(); // First, borrow the book to change its status
-        book.returnBook(); // Then, return it
-        assertTrue(book.isAvailable()); // The book should now be available
+        String title = "Harry Potter and the Philosopher's Stone";
+        String author = "J.K. Rowling";
+        String ISBN = "9780545010221";
+
+        Book book = new Book(title, author, ISBN);
+        book.borrowBook(); // Initially borrow the book
+        System.out.println("................................................");
+        System.out.println("Testing returnBook() method...");
+        System.out.println("Initial Availability: " + book.isAvailable());
+
+        book.returnBook();
+        System.out.println("Availability after returning: " + book.isAvailable());
+
+        assertTrue(book.isAvailable());
     }
 
     @Test
-public void testGetTitleConsistency() {
-    assertEquals("Checking title consistency across multiple calls", "The Great Gatsby", book.getTitle());
-}
+    public void testBorrowAndReturnBook() {
+        String title = "The Hobbit";
+        String author = "J.R.R. Tolkien";
+        String ISBN = "9780547928210";
 
-@Test
-public void testGetAuthorConsistency() {
-    assertEquals("Checking author consistency across multiple calls", "F. Scott Fitzgerald", book.getAuthor());
-}
+        Book book = new Book(title, author, ISBN);
+        System.out.println("................................................");
+        System.out.println("Testing borrowBook() and returnBook() methods...");
+        System.out.println("Initial Availability: " + book.isAvailable());
 
-@Test
-public void testGetISBNConsistency() {
-    assertEquals("Checking ISBN consistency across multiple calls", "123456789", book.getISBN());
-}
-
-@Test
-public void testIsAvailableAfterReturning() {
-    book.borrowBook(); // Borrow the book first
-    book.returnBook(); // Return the book
-    assertTrue("Book should be available after returning", book.isAvailable());
-}
-
-@Test
-public void testBorrowBookTwiceConsecutively() {
-    book.borrowBook(); // First time borrowing the book
-    assertTrue("Book should be unavailable after first borrow", !book.isAvailable());
-    book.returnBook(); // Return the book
-    book.borrowBook(); // Borrow again
-    assertFalse("Book should be able to be borrowed again after return", book.isAvailable());
-}
-
-@Test
-public void testReturnBookWithoutBorrowing() {
-    // Trying to return a book that hasn't been borrowed should have no adverse effect
-    book.returnBook(); // Return without borrowing
-    assertTrue("Book should still be available after returning without prior borrow", book.isAvailable());
-}
-
-@Test
-public void testAvailabilityAfterMultipleBorrowReturnCycles() {
-    for (int i = 0; i < 5; i++) {
         book.borrowBook();
-        assertFalse("Book should be unavailable after borrowing", book.isAvailable());
+        System.out.println("Availability after borrowing: " + book.isAvailable());
+
+        assertFalse(book.isAvailable());
+
         book.returnBook();
-        assertTrue("Book should be available after returning", book.isAvailable());
+        System.out.println("Availability after returning: " + book.isAvailable());
+
+        assertTrue(book.isAvailable());
     }
-}
 
-@Test
-public void testIsAvailableBeforeAndAfterBorrowing() {
-    assertTrue("Book should initially be available", book.isAvailable());
-    book.borrowBook();
-    assertFalse("Book should not be available after borrowing", book.isAvailable());
-}
-@Test
-public void testGetTitleUnchangedAfterReturn() {
-    book.borrowBook();
-    book.returnBook();
-    assertEquals("Title should remain unchanged after book is returned", "The Great Gatsby", book.getTitle());
-}
+    @Test(expected = IllegalStateException.class)
+    public void testBorrowBookException() {
+        String title = "The Hobbit";
+        String author = "J.R.R. Tolkien";
+        String ISBN = "9780547928210";
 
-@Test
-public void testGetAuthorUnchangedAfterReturn() {
-    book.borrowBook();
-    book.returnBook();
-    assertEquals("Author should remain unchanged after book is returned", "F. Scott Fitzgerald", book.getAuthor());
-}
-@Test
-public void testGetISBNUnchangedAfterReturn() {
-    book.borrowBook();
-    book.returnBook();
-    assertEquals("ISBN should remain unchanged after book is returned", "123456789", book.getISBN());
-}
+        // Create a book and borrow it
+        Book book = new Book(title, author, ISBN);
+        book.borrowBook(); // Now the book is borrowed
+
+        // Attempt to borrow the book again, which should throw an IllegalStateException
+        book.borrowBook();
+    }
 
 }
