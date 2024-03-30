@@ -29,3 +29,14 @@ To run the tests:
 2. After running the tests, review the test results to ensure all tests pass.
 
 Note: Make sure to replace ":" with ";" in the classpath separator if you're using Windows.
+
+
+ExceptionTestCounter.java to Count Exception Test classes
+
+To compile and run:
+    javac ExceptionTestCounter.Java
+    java ExceptionTestCounter
+
+
+
+
