@@ -1,23 +1,31 @@
-# Library Management System (LMS)
+README
 
-The Library Management System (LMS) is a software application designed to automate and streamline library operations. It provides functionalities for managing books, members, loans, and more, making library management efficient and convenient.
+The Library Management System (LMS) is designed to efficiently manage library resources and member activities.
 
-## Features
+Classes such as Book, Catalog, FeeCalculator, LoanManager, Member, MemberManager, NotificationService, ReportingTool, ReservationManager, SearchEngine, and Main.java are included in the project.
 
-- **Book Management:** Add, remove, and update book details such as title, author, ISBN, genre, and availability.
-- **Member Management:** Manage library members, including registration, update, and deletion of member records.
-- **Loan Management:** Facilitate the borrowing and returning of books by members, with due date tracking and notifications.
-- **Fine Calculation:** Automatically calculate fines for overdue books based on configurable parameters.
-- **Reporting:** Generate reports on book availability, member activity, overdue books, and more.
-- **User Authentication:** Secure access to the system with user authentication and authorization mechanisms.
 
-## Usage
+To compile the application:
 
-Once the application is up and running, you can access it through a web browser. Here are some common actions:
+1. Navigate to the project directory containing the source code and test files.
+2. Compile the source code and test files using the following command:
 
-- **Login:** Use your credentials to log in to the system.
-- **Browse Books:** View available books, search for specific titles or authors.
-- **Manage Books:** Add new books, update existing entries, or remove books from the collection.
-- **Manage Members:** Register new members, update member details, or delete member records.
-- **Loan Books:** Check out books to members and specify the due date.
-- **Return Books:** Mark borrowed books as returned and calculate any applicable fines.
+    javac -cp .:junit-4.12.jar:hamcrest-core-1.3.jar *.java
+
+   This command compiles all Java files in the directory along with the necessary JAR files for JUnit.
+
+To run the Main.java
+
+    java Main
+
+To run the tests:
+
+1. After compiling the application, execute the test suite using the following command:
+
+    java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar AllTestsSuite
+
+   This command runs the test suite, which includes all test classes in the project.
+
+2. After running the tests, review the test results to ensure all tests pass.
+
+Note: Make sure to replace ":" with ";" in the classpath separator if you're using Windows.
