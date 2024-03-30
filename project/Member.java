@@ -10,6 +10,7 @@
  */
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Member {
     private String name;
@@ -35,7 +36,13 @@ public class Member {
      * @return The name of the member.
      */
     public String getName() {
-        return name;
+        try {
+            return name;
+        } catch (Exception e) {
+            // Handle the exception, such as logging or returning a default value
+            e.printStackTrace();
+            return "Unknown"; // Return a default value or handle the exception according to your application's logic
+        }
     }
 
     /**
@@ -78,11 +85,13 @@ public class Member {
      *
      * @param book The book to be returned.
      */
-    public void returnBook(Book book) {
+     public void returnBook(Book book) {
         if (borrowedBooks.contains(book)) {
             book.returnBook();
             borrowedBooks.remove(book);
             System.out.println(name + " has returned the book: " + book.getTitle());
+        } else {
+            throw new NoSuchElementException("The book '" + book.getTitle() + "' was not borrowed by " + name);
         }
     }
 }

@@ -26,8 +26,15 @@ public class MemberManager {
      * @param member The member to be added.
      */
     public void addMember(Member member) {
-        members.add(member);
-        System.out.println("Member added: " + member.getName() + " with ID " + member.getID());
+        if (member == null) {
+            throw new IllegalArgumentException("Member cannot be null");
+        }
+        if (!members.contains(member)) {
+            members.add(member);
+            System.out.println("Member added: " + member.getName() + " with ID " + member.getID());
+        } else {
+            System.out.println("Member already exists in the library.");
+        }
     }
 
     /**
@@ -36,8 +43,15 @@ public class MemberManager {
      * @param memberId The ID of the member to be removed.
      */
     public void removeMember(String memberId) {
-        members.removeIf(member -> member.getID().equals(memberId));
-        System.out.println("Member with ID " + memberId + " removed from the library.");
+        if (memberId == null || memberId.isEmpty()) {
+            throw new IllegalArgumentException("Member ID cannot be null or empty");
+        }
+        boolean removed = members.removeIf(member -> member.getID().equals(memberId));
+        if (removed) {
+            System.out.println("Member with ID " + memberId + " removed from the library.");
+        } else {
+            System.out.println("Member with ID " + memberId + " not found in the library.");
+        }
     }
 
     /**
