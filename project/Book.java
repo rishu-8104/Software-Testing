@@ -73,7 +73,7 @@ public class Book {
         if (isAvailable) {
             isAvailable = false;
         } else {
-            System.out.println("Book is not available for borrowing.");
+            throw new IllegalStateException("Book is not available for borrowing.");
         }
     }
 
